@@ -13,9 +13,9 @@ example_class_text = (
     "Andes are tallest mountain ranges in American continent."
     "Dead Sea is mostly of salt."
 )
-example_class_doc = nlp(example_class_text)
+doc = nlp(example_class_text)
 
-for ent in example_class_doc.ents:
+for ent in doc.ents:
     print(
         f"""
 {ent.text = }
@@ -25,4 +25,4 @@ for ent in example_class_doc.ents:
 spacy.explain('{ent.label_}') = {spacy.explain(ent.label_)}"""
 )
     
-displacy.serve(example_class_doc, style="ent")
+displacy.serve(doc, style="ent")
